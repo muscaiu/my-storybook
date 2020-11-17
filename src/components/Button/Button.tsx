@@ -1,12 +1,9 @@
 import React from "react";
 
-// import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-// import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-
 import { ButtonContainer } from "./Button.style";
 
 export type ButtonSize = "small" | "medium" | "large";
-export type ButtonType = "primary" | "secondary" | "white";
+export type ButtonType = "primary" | "secondary" | "white" | "pulse" | "disco";
 export type ButtonChevron = "left" | "right" | "none";
 
 export interface ButtonProps {
@@ -38,15 +35,7 @@ const Button = (props: ButtonProps) => {
 
   const buttonProps = { onClick, className: classNames.join(" "), disabled };
 
-  return (
-    <ButtonContainer {...buttonProps}>
-      {/* {chevron === "left" && <ChevronLeftIcon className="icon-chevron-left" />} */}
-      {props.children}
-      {/* {chevron === "right" && (
-        <ChevronRightIcon className="icon-chevron-right" />
-      )} */}
-    </ButtonContainer>
-  );
+  return <ButtonContainer {...buttonProps}>{props.children}</ButtonContainer>;
 };
 
 export default Button;
