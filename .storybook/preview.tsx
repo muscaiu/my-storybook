@@ -12,9 +12,13 @@ export const parameters = {
 };
 
 export const decorators = [
-  (Story) => (
-    <ThemeProvider>
-      <Story />
-    </ThemeProvider>
-  ),
+  (Story) => {
+    console.log("Story:", Story);
+
+    return (
+      <ThemeProvider>
+        <Story />
+      </ThemeProvider>
+    );
+  },
 ];
